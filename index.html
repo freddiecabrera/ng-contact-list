@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Contacts List</title>
+      <link rel="stylesheet" href="http://bootswatch.com/cosmo/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+      <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+      <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js'></script>
+      <script type="text/javascript" src='main.js'></script>
+  </head>
+  <body ng-app='contactListApp' ng-controller='mainCtrl'>
+
+    <div class="container-fluid">
+      <div class="row appGroup">
+
+        <div ng-repeat='contact in contacts track by $index' class=" contactDisplay alert alert-dismissible alert-warning col-lg-7">
+          <button type="button" class="close" data-dismiss="alert">X</button>
+          <h4>{{contact.name}}</h4>
+          <p>{{contact.number}}</p>
+          <p>{{contact.email}}</p>
+        </div>
+
+        <form class="form-horizontal col-lg-3">
+          <fieldset>
+            <legend>Add Contact</legend>
+
+            <div class="form-group">
+              <label for="inputEmail" class="col-lg-2 control-label">Name</label>
+              <div class="col-lg-8">
+                <input ng-model='name' type="text" class="form-control" id="inputEmail" placeholder="Name">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputPassword" class="col-lg-2 control-label">Phone</label>
+              <div class="col-lg-8">
+                <input ng-model='phone' type="text" class="form-control" id="inputPassword" placeholder="Phone">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputPassword" class="col-lg-2 control-label">Email</label>
+              <div class="col-lg-8">
+                <input ng-model='email' type="text" class="form-control" id="inputPassword" placeholder="Email">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-lg-8 col-lg-offset-2">
+                <a href="#" class="btn btn-default btn-md btn-block" ng-click='addContact()'>Submit</a>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+
+
+  </body>
+</html>

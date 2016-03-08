@@ -1,0 +1,24 @@
+body{
+  background-color: #131416;
+}
+
+.appGroup{
+  margin-top: 20px;
+}
+
+.contactDisplay{
+  margin-left: 78px;
+  margin-right: 73px;
+  background-color: #1c1e21;
+}
+
+.form-horizontal{
+  margin-left: 5px;
+  background-color: #1c1e21;
+}
+
+.form-control{
+  background-color: #131416;
+  border-color: 131416;
+  margin-left: 24px;
+}
