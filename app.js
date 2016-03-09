@@ -48,6 +48,21 @@ app.post('/contacts', function(req,res) {
   })
 });
 
+app.delete('/contacts/:index', function(req, res) {
+  var index = req.params.index;
+  console.log(index);
+
+  fs.readFile(contactsFileName, function(err, data) {
+    var newContactsArray = JSON.parse(data);
+    newContactsArray.splice(index, 1);
+
+    fs.writeFile(contactsFileName, JSON.stringify(newContactsArray), function(err) {
+      console.log(err);
+    });
+  });
+
+});
+
 var server = http.createServer(app);
 server.listen(PORT, function() {
   console.log(`server listening on port: ${PORT}`);

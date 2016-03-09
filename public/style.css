@@ -13,7 +13,7 @@ body{
 }
 
 .form-horizontal{
-  margin-left: 5px;
+  margin-left: 62px;
   background-color: #1c1e21;
 }
 
@@ -21,4 +21,28 @@ body{
   background-color: #131416;
   border-color: 131416;
   margin-left: 24px;
+}
+
+#inputEmail{
+  margin-right: 5px;
+}
+
+.btn{
+  background-color: #034CEB;
+}
+
+#delete{
+  color: #034CEB;
+}
+
+legend{
+  color: #F8F8FA;
+}
+
+.control-label{
+  color: #F8F8FA;
+}
+
+#emailOutput{
+  color: #F8F8FA;
 }

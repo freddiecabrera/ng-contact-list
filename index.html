@@ -12,14 +12,6 @@
 
     <div class="container-fluid">
       <div class="row appGroup">
-
-        <div ng-repeat='contact in contacts track by $index' class=" contactDisplay alert alert-dismissible alert-warning col-lg-7">
-          <button type="button" class="close" data-dismiss="alert">X</button>
-          <h4>{{contact.name}}</h4>
-          <p>{{contact.number}}</p>
-          <p>{{contact.email}}</p>
-        </div>
-
         <form class="form-horizontal col-lg-3">
           <fieldset>
             <legend>Add Contact</legend>
@@ -52,6 +44,13 @@
             </div>
           </fieldset>
         </form>
+
+        <div ng-repeat='contact in contacts track by $index' class=" contactDisplay alert alert-dismissible alert-warning col-lg-7">
+          <button ng-click='deleteContact()' type="button" class="close" data-dismiss="alert"><span id='delete'>X</span></button>
+          <h4>{{contact.name}}</h4>
+          <p>{{contact.number}}</p>
+          <p>{{contact.email}}</p>
+        </div>
       </div>
     </div>
 

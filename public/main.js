@@ -3,6 +3,8 @@ angular.module('contactListApp', [])
     $scope.contacts = [];
 
 
+
+
     $scope.initialContacList = function() {
       $http({
         method: 'GET',
@@ -12,9 +14,7 @@ angular.module('contactListApp', [])
           $scope.contacts.push(contact);
         });
         console.log('$scope.contacts:', $scope.contacts);
-        console.log('res: ', res);
       }).then(function(err) {
-        console.log('err: ', err);
       });
     };
     $scope.initialContacList();
@@ -27,10 +27,23 @@ angular.module('contactListApp', [])
         data: dataObject
       }).then(function(res) {
         $scope.contacts.push(res.config.data);
-        console.log('res: ', res);
       }).then(function(err) {
-        console.log('err: ', err);
       });
+    };
+
+    $scope.deleteContact = function() {
+      var theIndex = this.$index;
+      $scope.contacts.splice(theIndex, 1);
+
+      $http({
+        method: 'DELETE',
+        url: `/contacts/${theIndex}`
+      }).then(function(res) {
+        console.log('res: ', res);
+      },function(err) {
+        console.log('err on DELETE');
+      });
+
     }
 
 
